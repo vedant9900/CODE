@@ -87,3 +87,90 @@ The notebook compares Linear Regression, Logistic Regression (balanced), and Ran
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+
+
+
+
+
+
+# 🍔 SymbiEat Cafe — Self-Order Kiosk (C)
+
+A console-based self-order kiosk system built in C. Simulates a real cafe ordering flow — browse menus, build an order, view a running total, apply tiered discounts, add GST, and check out with a printed receipt.
+
+```
+  ==============================
+     WELCOME TO SYMBIEAT CAFE!
+         Self Order Kiosk
+  ------------------------------
+    Burgers | Sides | Drinks
+  ==============================
+```
+
+## Features
+
+- 🍔 **Category menus** — Burgers, Sides, Drinks, each with 4 items
+- 🧾 **Live order tracking** — running subtotal updates as items are added
+- ✏️ **Modify order** — add more items or remove an item mid-order
+- 💸 **Tiered discounts** — automatically applied at checkout:
+  | Order value | Discount |
+  |---|---|
+  | ≥ ₹199 | 5% |
+  | ≥ ₹299 | 10% |
+  | ≥ ₹499 | 15% |
+- 🧮 **GST calculation** — 5% GST added to subtotal
+- 🧾 **Itemized receipt** — printed on payment confirmation
+- 💳 **Payment method selection** — Cash / Card / UPI
+- 🔁 **Multi-order loop** — start a new order or exit after checkout
+
+## Tech Stack
+
+- **Language:** C
+- **Libraries:** `stdio.h`, `string.h`, `stdlib.h`
+- No external dependencies
+
+## Getting Started
+
+### Prerequisites
+Any C compiler (GCC recommended).
+
+### Build & Run
+
+```bash
+gcc SYMBIEAT_CAFE.c -o symbieat
+./symbieat
+```
+
+On Windows (MinGW):
+
+```bash
+gcc SYMBIEAT_CAFE.c -o symbieat.exe
+symbieat.exe
+```
+
+## Usage
+
+1. Choose a category (Burgers / Sides / Drinks) from the main menu
+2. Pick an item to add it to your order
+3. Repeat for as many items as you like
+4. Use **View Order** anytime to see your running total
+5. Go to **Checkout** to confirm, modify, or cancel the order
+6. Select a payment method to receive your final receipt
+
+## Project Structure
+
+```
+SYMBIEAT_CAFE.c   → Single-file source (menus, order logic, checkout, receipt)
+```
+
+## Possible Improvements
+
+- Persist orders to a file for a basic order history/log
+- Replace fixed-size arrays with dynamic memory (`malloc`) to remove the 50-item cap
+- Split into multiple files/headers (`menu.c`, `order.c`, `checkout.c`) for readability
+- Add input validation for `scanf` to guard against non-numeric input
+- Add an admin mode to edit menu prices
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
